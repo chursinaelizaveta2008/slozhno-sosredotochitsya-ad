@@ -1,5 +1,339 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  background-color: var(--background-color);
+  background-image: var(--background-image);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  color: var(--text-color);
+  font-family: var(--main-font);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  inline-size: 100%;
+  overflow-x: hidden;
+}
+
+.header {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  align-items: center;
+  padding: 10px;
+  block-size: 100vb;
+  min-block-size: 668px;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.header__theme-menu-button {
+  padding: 0 13px;
+  border: 1px solid transparent;
+  background: none;
+  text-transform: lowercase;
+  cursor: pointer;
+  color: var(--accent-color);
+}
+
+.header__theme-menu-button:hover {
+  border-color: var(--button-hover-color);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-block-end-color: var(--button-focus-color);
+}
+
+.header__theme-menu-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.header__theme-menu-button_active {
+  border-color: var(--accent-color);
+  pointer-events: none;
+}
+
+.header__rec {
+  position: absolute;
+  inset-inline-end: 28px;
+  inset-block-start: 10px;
+  color: var(--decorated-element-color);
+  font-size: inherit;
+  line-height: 1.39;
+  text-transform: uppercase;
+}
+
+.header__rec::after {
+  content: '';
+  position: absolute;
+  inset-inline-end: -19px;
+  inset-block-start: 8px;
+  inline-size: 9px;
+  block-size: 9px;
+  border-radius: 50%;
+  background-color: var(--decorated-element-color);
+  box-shadow: 0 0 4px 2px var(--decorated-element-color);
+}
+
+.theme-light .header__rec {
+  display: none;
+}
+
+.header__theme-menu {
+  justify-self: end;
+  align-self: start;
+  margin-block-start: 65px;
+}
+
+.header__title {
+  color: var(--title-color);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 0.825;
+  text-shadow: 4px 4px 0 var(--accent-color);
+  text-transform: lowercase;
+  font-weight: 700;
+}
+
+.header__text {
+  justify-self: end;
+  align-self: center;
+  max-inline-size: 364px;
+  font-weight: 700;
+}
+
+.title-decor {
+  background-color: var(--card-background);
+  color: var(--card-title-color);
+}
+
+.decorated-zone::before,
+.decorated-zone::after {
+  content: '';
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+}
+
+.decorated-zone::before {
+  border-inline-end: 1px solid var(--decorated-element-color);
+  border-block-start: 1px solid var(--decorated-element-color);
+  inset-inline-end: 10px;
+  inset-block-start: 10px;
+}
+
+.decorated-zone::after {
+  border-inline-start: 1px solid var(--decorated-element-color);
+  border-block-end: 1px solid var(--decorated-element-color);
+  inset-inline-start: 10px;
+  inset-block-end: 10px;
+}
+
+.main {
+  display: grid;
+  gap: var(--section-gap);
+  padding: 40px 10px;
+}
+
+.section {
+  display: grid;
+  gap: var(--gap);
+}
+
+.section__title {
+  color: var(--section-title-color);
+  font-size: inherit;
+  font-weight: 700;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+.card__title {
+  font-size: inherit;
+  font-weight: 700;
+}
+
+.card__title_regular {
+  font-weight: 400;
+}
+
+.card__text-link {
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+.card__text-link:hover {
+  border-block-end: 1px solid currentColor;
+}
+
+.card__text-link:focus {
+  outline: none;
+}
+
+.card__text-link:focus-visible {
+  outline: 1px solid currentColor;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+.gallery__list {
+  display: grid;
+  gap: 10px;
+}
+
+.gallery__image {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.footer {
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding: 10px;
+  block-size: 100vb;
+  min-block-size: 668px;
+}
+
+.footer__title {
+  color: var(--title-color);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-weight: 700;
+  line-height: 0.825;
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+@media (width >= 768px) {
+  .header__rec {
+    inset-inline-end: 38px;
+    inset-block-start: 20px;
+  }
+  
+  .header__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    margin-inline-start: -20px;
+  }
+  
+  .header__text {
+    max-inline-size: 50%;
+  }
+  
+  .main {
+    padding: 60px 20px;
+  }
+  
+  .section {
+    grid-template-columns: 1fr 2fr;
+    align-items: start;
+  }
+  
+  .section__title {
+    grid-column: 1;
+  }
+  
+  .card-list {
+    grid-column: 2;
+  }
+  
+  .gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--gap);
+  }
+  
+  .gallery .section__title {
+    grid-column: 1;
+  }
+  
+  .gallery__list {
+    grid-column: 1;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: var(--gap);
+  }
+  
+  .gallery__image:nth-child(1) {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+  }
+  
+  .gallery__image:nth-child(2) {
+    grid-column: 3 / 4;
+    grid-row: 1 / 3;
+  }
+  
+  .gallery__image:nth-child(3) {
+    grid-column: 1 / 2;
+    grid-row: 2 / 4;
+  }
+  
+  .gallery__image:nth-child(4) {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+  
+  .gallery__image:nth-child(5) {
+    grid-column: 2 / 4;
+    grid-row: 3 / 4;
+  }
+  
+  .footer {
+    padding: 20px;
+  }
+  
+  .footer__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+}
+
+@media (width >= 1024px) {
+  .header__theme-menu {
+    justify-self: center;
+    align-self: start;
+    margin-block-start: 0;
+    margin-inline-start: 20px;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+  
+  .section:nth-child(2) .card-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column: 1 / -1;
+    gap: var(--gap);
+  }
+  
+  .section:nth-child(2) .section__title {
+    grid-column: 1;
+  }
+  
+  .gallery__list {
+    grid-template-rows: repeat(3, minmax(200px, auto));
+  }
 }
