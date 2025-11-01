@@ -253,13 +253,11 @@
   }
   
   .header__text {
-    max-inline-size: 364px;
-    margin-block-start: 130px; 
+    margin-block-start: 130px;
   }
 
   .header__theme-menu {
-    align-self: start;
-    margin-block-start: 15px;  
+    margin-block-start: 15px;
     margin-inline-end: 0;       
   }
 
