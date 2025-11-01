@@ -5,27 +5,17 @@
 */
 
 :root.theme-dark {
-  --accent-color: #ff0070;
-  --title-color: #db00ff;
-  --text-color: #f1b2ce;
+  --accent-color: #FF0070;
+  --title-color: #DB00FF;
+  --text-color: #F1B2CE;
   --background-color: #000028;
   --background-image: url(../images/cover-image-dark.png);
   --button-hover-color: rgba(255, 0, 112, 0.4);
-  --button-focus-color: #ff0070;
-  --section-title-color: #ff0070;
+  --section-title-color: #FF0070;
   --card-title-color: #000028;
-  --card-background: #ff0070;
-  --decorated-element-color: #ff0070;
+  --card-background: #FF0070;
 }
 
 .theme-dark .header__rec {
   display: block;
-}
-
-.theme-dark .header__theme-menu-button {
-  color: var(--accent-color);
-}
-
-.theme-dark .header__theme-menu-button_active {
-  color: var(--accent-color);
 }
