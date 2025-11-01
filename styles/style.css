@@ -247,25 +247,27 @@
     inset-block-start: 20px;
   }
   
-  .header__title {
+   .header__title {
     font-size: 120px;
+    margin-inline-start: -20px;
   }
   
   .header__text {
     max-inline-size: 364px;
+    margin-block-start: 114px;
   }
 
  .header__theme-menu {
-    margin-block-start: 0;
+    align-self: start;
+    margin-block-start: 18px; 
+    margin-inline-end: 2px; 
   }
 
   .main {
-    padding: 60px 20px;
     gap: 80px;
   }
   
   .section {
-    align-items: start;
     grid-template-columns: 236px 1fr;
     gap: 20px;
   }
@@ -278,13 +280,15 @@
     grid-column: 2;
   }
   
-  .gallery {
+ .gallery {
     display: block;
   }
   
+  .gallery .section__title {
+    margin-bottom: 20px;
+  }
+  
   .gallery__list {
-    grid-template-columns: repeat(3, 1fr);
-    margin-top: 20px;
     grid-template-rows: 192px 230px 318px;
     gap: 20px;
   }
