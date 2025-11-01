@@ -7,11 +7,17 @@
   background-size: cover;
   background-attachment: fixed;
   color: var(--text-color);
-  font-family: var(--main-font);
+  font-family: var(--main-font), 'Courier New', monospace;
   font-size: var(--font-size);
   line-height: var(--line-height);
   inline-size: 100%;
   overflow-x: hidden;
+}
+
+.card__text,
+.section__title,
+.header__text {
+  color: var(--text-color);
 }
 
 .header {
@@ -249,16 +255,18 @@
   
   .header__title {
     font-size: 120px;
-    margin-inline-start: -20px; 
+    margin-inline-start: -20px;
   }
   
   .header__text {
-    margin-block-start: 130px;
+    max-inline-size: 364px;
+    margin-block-start: 162px; /* Точное значение из макета */
   }
 
   .header__theme-menu {
-    margin-block-start: 15px;
-    margin-inline-end: 0;       
+    align-self: start;
+    margin-block-start: 0; /* Меню вплотную к верхнему краю */
+    margin-inline-end: 0;
   }
 
   .main {
@@ -267,7 +275,7 @@
   }
   
   .section {
-    grid-template-columns: 236px 1fr;
+    grid-template-columns: 236px 1fr; /* Точная ширина из макета */
     gap: 20px;
   }
   
@@ -279,7 +287,7 @@
     grid-column: 2;
   }
   
- .gallery {
+  .gallery {
     display: block;
   }
   
@@ -288,9 +296,10 @@
   }
   
   .gallery__list {
-    grid-template-rows: 192px 260px 315px;
+    grid-template-rows: 192px 230px 318px; /* Точные высоты из макета */
+    gap: 20px;
   }
-  
+
   .gallery__image:nth-child(1) {
     grid-column: 1 / 3;
     grid-row: 1 / 2;
